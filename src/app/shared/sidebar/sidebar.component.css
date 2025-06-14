@@ -1,0 +1,85 @@
+/* Sidebar styles */
+.sidebar {
+  position: absolute;
+  top: 60px; /* below header */
+  left: 0;
+  width: 60px; /* collapsed width */
+  height: calc(100vh - 60px); /* full height minus header */
+  background-color: #2c3e50;
+  color: white;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Expanded sidebar */
+.sidebar.expanded {
+  width: 200px; /* expanded width */
+}
+
+/* Menu icon at the top */
+.menu-icon {
+  font-size: 24px;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation list */
+.nav-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Individual nav links */
+.nav-items li a {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  height: 50px; /* consistent height */
+}
+
+.nav-items li a:hover {
+  background-color: #34495e;
+}
+
+/* Icon next to each link */
+.icon {
+  font-size: 18px;
+  width: 24px;
+  margin-right: 0.75rem;
+  text-align: center;
+}
+
+/* Label text only shows when expanded (using *ngIf) */
+.label {
+  font-size: 16px;
+}
+
+/* Logout button styling */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 50px;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}

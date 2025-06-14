@@ -1,0 +1,19 @@
+<div class="upload-container">
+  <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <h2>Upload PDFs</h2>
+
+    <label>Name:</label>
+    <input type="text" formControlName="name" placeholder="Enter your name" />
+
+    <label>Select PDF 1:</label>
+    <input type="file" (change)="onFileChange($event, 0)" accept="application/pdf" />
+
+    <label>Select PDF 2:</label>
+    <input type="file" (change)="onFileChange($event, 1)" accept="application/pdf" />
+
+    <label>Select PDF 3:</label>
+    <input type="file" (change)="onFileChange($event, 2)" accept="application/pdf" />
+
+    <button type="submit">Upload</button>
+  </form>
+</div>

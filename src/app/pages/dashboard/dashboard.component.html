@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="dashboard-container">
+  <app-sidebar></app-sidebar>
+
+  <div class="dashboard-content">
+    <!-- Summary boxes only on main dashboard -->
+    <div class="dashboard-summary" *ngIf="isDashboardHome()">
+      <div class="summary-box vendors">
+        <h2>{{ vendorCount }}</h2>
+        <p>Vendors</p>
+      </div>
+      <div class="summary-box products">
+        <h2>{{ productCount }}</h2>
+        <p>Products</p>
+      </div>
+      <div class="summary-box orders">
+        <h2>{{ orderCount }}</h2>
+        <p>Orders</p>
+      </div>
+    </div>
+
+    <!-- Routed child component will appear here -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

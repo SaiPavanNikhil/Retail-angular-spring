@@ -1,0 +1,15 @@
+<div class="product-form-container">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form">
+    <input formControlName="name" placeholder="Product Name" />
+    
+    <select formControlName="type">
+      <option value="" disabled>Select Type</option>
+      <option value="hardware">Hardware</option>
+      <option value="software">Software</option>
+    </select>
+
+    <input formControlName="price" type="number" placeholder="Price" />
+
+    <button type="submit">Add Product</button>
+  </form>
+</div>

@@ -1,0 +1,54 @@
+<nav class="sidebar" [class.expanded]="expanded" (mouseover)="expand()" (mouseleave)="collapse()">
+  <div class="menu-icon">&#9776;</div>
+
+  <ul class="nav-items">
+    <li>
+      <a routerLink="/dashboard">
+        <span class="icon">🏠</span>
+        <span class="label" *ngIf="expanded">Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/vendor">
+        <span class="icon">🏬</span>
+        <span class="label" *ngIf="expanded">Vendor</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/product">
+        <span class="icon">📦</span>
+        <span class="label" *ngIf="expanded">Product</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/order">
+        <span class="icon">🛒</span>
+        <span class="label" *ngIf="expanded">Order</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/report">
+        <span class="icon">📊</span>
+        <span class="label" *ngIf="expanded">Report</span>
+      </a>
+    </li>
+    <li>
+  <a routerLink="/dashboard/upload">
+    <span class="icon">📤</span>
+    <span class="label" *ngIf="expanded">Upload</span>
+  </a>
+</li>
+<li>
+  <a routerLink="/dashboard/view">
+    <span class="icon">📄</span>
+    <span class="label" *ngIf="expanded">View</span>
+  </a>
+</li>
+
+  </ul>
+
+  <button class="logout-btn" (click)="logout()">
+    <span class="icon">🚪</span>
+    <span class="label" *ngIf="expanded">Logout</span>
+  </button>
+</nav>

@@ -1,0 +1,32 @@
+.upload-container {
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 2rem;
+  background: #fdfdfd;
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+  border-radius: 12px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input[type="text"],
+input[type="file"] {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 0.75rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}

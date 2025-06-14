@@ -1,0 +1,25 @@
+<div class="report-container">
+  <h2>Report Page</h2>
+
+  <!-- Vendor Dropdown -->
+  <mat-form-field appearance="fill">
+    <mat-label>Vendor</mat-label>
+    <input type="text" matInput [formControl]="vendorControl" [matAutocomplete]="vendorAuto">
+    <mat-autocomplete #vendorAuto="matAutocomplete" [displayWith]="displayVendorName.bind(this)">
+      <mat-option *ngFor="let v of filteredVendors" [value]="v">
+        {{ v.vendorName }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+
+  <div *ngIf="productsByVendor.length > 0" class="product-list">
+    <h3>Products ordered by {{ vendorControl.value?.vendorName }}</h3>
+    <ul>
+      <li *ngFor="let product of productsByVendor">
+        {{ product.name }}
+      </li>
+    </ul>
+  </div>
+</div>

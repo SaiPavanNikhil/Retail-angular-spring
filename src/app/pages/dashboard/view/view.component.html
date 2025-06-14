@@ -1,0 +1,18 @@
+<div class="view-container">
+  <h2>Uploaded PDFs</h2>
+
+  <div *ngFor="let upload of uploads" class="upload-card">
+    <h3>{{ upload.name }}</h3>
+
+    <div class="pdf-list">
+      <strong>Uploaded Files:</strong>
+      <ul>
+        <li>📄 {{ upload.pdf1Name }}</li>
+        <li>📄 {{ upload.pdf2Name }}</li>
+        <li>📄 {{ upload.pdf3Name }}</li>
+      </ul>
+    </div>
+
+    <button (click)="generateMergedPDF(upload)">Generate Merged PDF</button>
+  </div>
+</div>

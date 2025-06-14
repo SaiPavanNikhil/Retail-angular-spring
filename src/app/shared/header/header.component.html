@@ -1,0 +1,7 @@
+<header class="header">
+  <div class="logo">🛒 E-Retail</div>
+  <div class="right">
+    <button *ngIf="!isLoggedIn()" routerLink="/signin">Sign In</button>
+    <span *ngIf="isLoggedIn()">{{ getUsername() }}</span>
+  </div>
+</header>

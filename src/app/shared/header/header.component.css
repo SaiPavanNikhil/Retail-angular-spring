@@ -1,0 +1,58 @@
+.header {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #34495e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 1001;
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 40%; /* Ensure it doesn't overflow too far on smaller screens */
+  overflow: hidden;
+}
+
+.right button {
+  background-color: #3498db;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 400;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right button:hover {
+  background-color: #2980b9;
+}
+
+.right span {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ecf0f1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;  /* or use 100% if in a flex box with limited size */
+  flex-shrink: 0;
+}

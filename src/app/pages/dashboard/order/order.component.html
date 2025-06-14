@@ -1,0 +1,36 @@
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+  <h2>Place Order</h2>
+
+  <!-- Vendor -->
+<mat-form-field appearance="fill">
+  <mat-label>Vendor</mat-label>
+  <input matInput formControlName="vendorSearch" [matAutocomplete]="vendorAuto">
+  <mat-autocomplete #vendorAuto="matAutocomplete" (optionSelected)="onVendorSelected($event.option.value)" [displayWith]="displayVendorName.bind(this)">
+    <mat-option *ngFor="let v of filteredVendors" [value]="v">
+      {{ v.vendorName }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+
+  <!-- Product -->
+  <mat-form-field appearance="fill">
+    <mat-label>Product</mat-label>
+    <input matInput formControlName="product" [matAutocomplete]="productAuto">
+    <mat-autocomplete #productAuto="matAutocomplete" [displayWith]="displayProductName.bind(this)">
+      <mat-option *ngFor="let p of filteredProducts" [value]="p">
+        {{ p.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <!-- Date -->
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Submit Order</button>
+</form>
